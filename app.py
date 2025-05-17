@@ -21,9 +21,9 @@ def pesquisacep(cep):
     resposta = requests.get(url)
     return resposta.json()
 
-@app.route('/pesquisaclima/<sp>', methods=['GET'])
+@app.route('/pesquisaclima/sp', methods=['GET'])
 def pesquisaclima(sp):
-    url = f'https://api.openweathermap.org/data/2.5/weather?q=SaoPaulo&appid=6530d4c9075dd9776ada9025b05803dc&units=metric'
+    url = f'https://api.openweathermap.org/data/2.5/weather?q=Sao#Paulo&appid=6530d4c9075dd9776ada9025b05803dc&units=metric'
     resposta = requests.get(url)
     return resposta.json()
 
