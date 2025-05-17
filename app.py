@@ -24,11 +24,16 @@ def pesquisacep(cep):
 @app.route('/tempo', methods=['GET'])
 def tempo():
     cidade = "Presidente Prudente"
-    key = "6530d4c9075dd9776ada9025b05803dc"
+    key = "158e461d420bb8b31a1288bbe9dee7ee"
     url = f'https://api.weatherapi.com/v1/current.json?key={key}&q{cidade}&lang=pt'
     resposta = requests.get(url)
     return resposta.json()
 
+    temperatura = result['curent']['temp_c']
+    umidade = result['current']['humidity']
+
+    return render_template('tempo.html' , temp=temperatura, umid=umidade)
+    #return resposta.json()
 
 if __name__ == '__main__':
     app.run(debug=True)
