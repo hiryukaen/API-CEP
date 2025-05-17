@@ -23,7 +23,9 @@ def pesquisacep(cep):
 
 @app.route('/pesquisaclima/sp', methods=['GET'])
 def pesquisaclima(sp):
-    url = f'https://api.openweathermap.org/data/2.5/weather?q=Sao#Paulo&appid=6530d4c9075dd9776ada9025b05803dc&units=metric'
+    cidade = "Presidente Prudente"
+    key = "6530d4c9075dd9776ada9025b05803dc"
+    url = f'https://api.weatherapi.com/v1/current.json?key={key}&q{cidade}&lang=pt'
     resposta = requests.get(url)
     return resposta.json()
 
