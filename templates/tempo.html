@@ -29,7 +29,21 @@
     </style>
 </head>
 <body>
+    
     <div class="painel">
+        <h1>Informações Climáticas</h1>
+
+        <!-- Formulário para o usuário escolher a cidade -->
+        <form action="/tempo" method="GET">
+            <label for="cidade">Escolha a cidade:</label>
+            <select name="cidade" id="cidade">
+                <option value="Presidente Prudente">Presidente Prudente</option>
+                <option value="São Paulo">São Paulo</option>
+                <option value="Rio de Janeiro">Rio de Janeiro</option>
+                <option value="Belo Horizonte">Belo Horizonte</option>
+                <!-- Adicione mais cidades conforme necessário -->
+            </select>
+            <button type="submit">Buscar</button>
         <h1>Monitoramento de Ambiente</h1>
         <div class="dado">🌡️ Temperatura: <strong>{{ temp }}°C</strong></div>
         <div class="dado">💧 Umidade: <strong>{{ umid }}%</strong></div>
