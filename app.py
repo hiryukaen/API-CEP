@@ -31,8 +31,13 @@ def tempo():
 
     temperatura = result['current']['temp_c']
     umidade = result['current']['humidity']
+    localtime = result['location']['localtime']
+    region = result['location']['region']
+    vis_km = result['current']['vis_km']
+    pressure_mb = result['current']['pressure_mb']
 
-    return render_template('tempo.html' , temp=temperatura, umid=umidade)
+
+    return render_template('tempo.html' , temp=temperatura, umid=umidade, loc=localtime, reg=region, vis=vis_km, press=pressure_mb)
     #return resposta.json()
 
 if __name__ == '__main__':
